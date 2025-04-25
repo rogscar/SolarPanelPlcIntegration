@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "PlcIntegration.Manufacturing.PlcDataController",
+    "Method": "Post",
+    "RelativePath": "api/PlcData",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "PlcIntegration.Manufacturing.PlcData",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlcIntegration.Manufacturing.PlcDataController",
+    "Method": "GetModbus",
+    "RelativePath": "api/PlcData/modbus/{deviceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlcIntegration.Manufacturing.PlcDataController",
+    "Method": "GetOpcUa",
+    "RelativePath": "api/PlcData/opcua/{deviceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Fx6N82xXEPQpEWFf2t8odi0mbWa0asEMmRx4IDMkWPk=",
+  "Source": "SolarPanelPlcIntegration",
+  "BasePath": "_content/SolarPanelPlcIntegration",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
