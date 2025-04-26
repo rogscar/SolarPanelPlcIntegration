@@ -26,7 +26,9 @@ Git/GitHub: Version control.
 Prerequisites
 
 .NET 8.0 SDK: Install from Microsoft.
-SQL Server: Install SQL Server Express and SSMS. Create a database named Manufacturing with two tables:CREATE TABLE PlcReadings (
+SQL Server: Install SQL Server Express and SSMS. Create a database named Manufacturing with two tables:
+
+CREATE TABLE PlcReadings (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     DeviceId INT,
     Temperature FLOAT,
