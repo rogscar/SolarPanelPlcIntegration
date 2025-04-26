@@ -118,8 +118,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ```mermaid
 flowchart TD
-    A[OPC UA Server\nProsys Simulation Server] -->|Read CurrentTime Node| B[GET /api/PlcData/opcua/{deviceId}]
-    C[Modbus Server\n127.0.0.1:502] -->|Read Registers 40001-40004| D[GET /api/PlcData/modbus/{deviceId}]
+    A[OPC UA Server\nProsys Simulation Server] -->|Read CurrentTime Node| B[GET /api/PlcData/opcua/deviceId]
+    C[Modbus Server\n127.0.0.1 502] -->|Read Registers 40001-40004| D[GET /api/PlcData/modbus/deviceId]
     E[Client Request] -->|POST Data| F[POST /api/PlcData]
 
     B --> G[PlcDataService.cs\nReadPlcDataOpcUaAsync]
