@@ -113,3 +113,46 @@ Deploy the API to a cloud service for remote access.
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Project Flowchart
+
+    ```mermaid
+    flowchart TD
+        %% Data Sources
+        A[OPC UA Server<br>(Prosys Simulation Server)] -->|Read CurrentTime Node| B[GET /api/PlcData/opcua/{deviceId}]
+        C[Modbus Server<br>(127.0.0.1:502)] -->|Read Registers 40001-40004| D[GET /api/PlcData/modbus/{deviceId}]
+        E[Client Request] -->|POST Data| F[POST /api/PlcData]
+
+        %% API Processing
+        B --> G[PlcDataService.cs<br>ReadPlcDataOpcUaAsync]
+        D --> H[PlcDataService.cs<br>ReadPlcDataModbusAsync]
+        F --> I[PlcDataService.cs<br>ProcessPlcDataAsync]
+
+        %% Data Validation
+        G --> J[Validate Data<br>Temperature: -50°C to 200°C]
+        H --> J
+        I --> J
+
+        %% Error Handling
+        J -->|Invalid| K[LogErrorAsync<br>Store in ErrorLog Table]
+        K --> L[Return Error Response<br>HTTP 500]
+
+        %% Data Storage
+        J -->|Valid| M[ProcessPlcDataAsync<br>Store in PlcReadings Table]
+
+        %% Queue for Analysis
+        M --> N[QueueForAnalysisAsync<br>Add to ConcurrentQueue]
+
+        %% Return Response
+        G -->|Success| O[Return PlcData<br>HTTP 200 OK]
+        H -->|Success| O
+        M -->|Success| P[Return HTTP 200 OK]
+
+        %% Database
+        M --> Q[SQL Server<br>Manufacturing Database]
+        K --> Q
+
+        %% Queue Processing
+        N --> R[ProcessQueueAsync<br>Background Processing]
+    ```
+    ```
