@@ -1,6 +1,6 @@
 SolarPanelPlcIntegration
 Overview
-SolarPanelPlcIntegration is a .NET Core Web API project developed as a proof-of-concept for integrating PLC (Programmable Logic Controller) data in a manufacturing context, specifically for solar panel production. Built for a First Solar job interview demo on April 23, 2025, this project demonstrates the ability to read data from PLCs using OPC UA and Modbus protocols, validate and store the data in a SQL Server database, and expose it via RESTful API endpoints. It showcases problem-solving skills through troubleshooting authentication issues, build errors, and Git permission challenges during development.
+SolarPanelPlcIntegration is a .NET Core Web API project developed as a proof-of-concept for integrating PLC (Programmable Logic Controller) data in a manufacturing context, specifically for solar panel production. This project demonstrates the ability to read data from PLCs using OPC UA and Modbus protocols, validate and store the data in a SQL Server database, and expose it via RESTful API endpoints. It showcases problem-solving skills through troubleshooting authentication issues, build errors, and Git permission challenges during development.
 Features
 
 OPC UA Integration: Reads data from the Prosys OPC UA Simulation Server (opc.tcp://localhost:53530/OPCUA/SimulationServer) using anonymous authentication. Currently reads the CurrentTime node (ns=0;i=2258) and hardcodes temperature and pressure for demo purposes.
